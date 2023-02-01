@@ -1,0 +1,10 @@
+--- configure.orig	2011-06-10 17:53:18.000000000 +0200
++++ configure	2015-10-01 00:27:58.426645414 +0200
+@@ -3230,7 +3230,7 @@
+ 
+ 
+ 
+-CFLAGS='-g -Wall'
++CFLAGS="$CFLAGS -g -Wall"
+ 
+ tayga_conf_path=${sysconfdir}/tayga.conf
