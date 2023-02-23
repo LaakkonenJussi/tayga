@@ -5,8 +5,16 @@ Summary:	Simple, no-fuss NAT64
 License:	GPLv2+
 URL:		http://www.litech.org/%{name}/
 Source0:	http://www.litech.org/%{name}/%{name}-%{version}.tar.bz2
-Patch0:		tayga-0.9.2_cflags_override.patch
-Patch1:		tayga-c99.patch
+Patch1:		0001-use-var-spool.patch
+Patch2:		0002-manpage.patch
+Patch3:		0003-cflags-override.patch
+Patch4:		0004-quote-make-var.patch
+Patch5:		0005-guard-chdir.patch
+Patch6:		0006-guard-write.patch
+Patch7:		0007-static-EAM.patch
+Patch8:		0008-manpage-RFC.patch
+Patch9:		0009-include-for-writev.patch
+Patch10:	0010-null-char.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 Requires:	iproute
@@ -23,9 +31,7 @@ dedicated NAT64 hardware would be overkill.
 
 
 %prep
-%setup -q -n %{name}-%{version}
-%patch0 -p0
-%patch1 -p1
+%autosetup -p1 -n %{name}-%{version}/src
 
 
 %build
